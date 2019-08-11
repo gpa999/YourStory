@@ -1,3 +1,41 @@
 // Place all the styles related to the stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.story-box {
+    width: 100vw;
+    padding: 2em 4em;
+    margin-top: 2em;
+}
+.story-block {
+    display: inline-block;
+    vertical-align: top;
+}
+.story-wp {
+    display: block;
+    width: 60vw;
+    margin-left: 4em;
+}
+.story-image {
+    margin-left: 12vw;
+    width: 10vw;
+    height: 20vh;
+    border-radius: 1em;
+}
+.story-title {
+    text-decoration: none;
+    color: #000000;
+    margin-top: 0.7em;
+    margin-left: 2.2em;
+    font-size: 1.8em;
+}
+.story-tb {
+    height: 20vh;
+    width: 60vw;
+}
+.story-text {
+    margin-top: 1.4em;
+    margin-left: 3em;
+    font-size: 1.3em;
+    color: #AAAAAA;
+}
+

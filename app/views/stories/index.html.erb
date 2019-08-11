@@ -1,1 +1,13 @@
-<h1>aaa</h1>
+<% @stories.each do |story| %>
+<div class="story-box">
+    <div class="story-block story-image" style="background-image: url(<%= story.image %>) "></div>
+    <div class="story-block story-tb"> 
+      <a href="" class="story-wp story-title">
+          <%= story.title %>
+      </a>
+      <p class="story-wp story-text">
+          <%= story.text %>
+      </p>
+    </div>   
+</div>
+<% end %>
