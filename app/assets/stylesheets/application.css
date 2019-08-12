@@ -13,16 +13,104 @@
  *= require_tree .
  *= require_self
  */
- 
  .header {
+  display:table;
+ }
+ .ht-6 {
      height: 10vh;
+     width: 75.6vw;
      background-color: #c89351	;
      padding-top: 1.2em;
+     margin-right:0;
+ }
+ .top {
+  display: table-cell;
+  vertical-align: top;
+  
  }
  .title {
      text-decoration: none;
      color: #666666;
      font-size: 2.5em;
      margin-left: 2em;
-     font-family:'arial black';
+     font-family:'arial black'
+ } 
+ .haji {
+  width:26.08vw;
+  height: 8.548vh;
+  background-color: #C9C49B;
+  margin: 0;
+  padding-top: 1.8em;
+  padding-left:0.5em;
+ }
+ 
+ .grid-6 {
+  display: inline-block;
+ }
+ 
+ .post {
+  text-decoration: none;
+  color: #666666;
+  margin-left: 2em;
+  display: inline-block;
+  border: solid #350a61 0.1em;
+  border-radius:0.25em;
+  padding: 0.5em;
+ }
+ .big_box {
+  display: inline-block;
+  vertical-align: top;
+ }
+ .left-contents {
+  width: 73.5vw;
+  
+ }
+ .right-contents {
+  width: 26.08vw;
+  height: 100vh;
+  background-color:#CAE5CD;
+  padding-top: 1.2em;
+ }
+ .in-right {
+  display: block;
+  margin-top: 1em;
+  margin-left:2em;
+  text-decoration: none;
+  color:#666666 ;
+ }
+ .sign_up {
+  height: 70vh;
+  width: 30vw;
+  background-color:#f0f0f0;
+  margin-top: 3em;
+  margin-left: 15em;
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 0.25em;
+  text-align: center;
+  padding-top: 2em;
+ }
+ .sign_up_top {
+  color: #9dceff;
+ }
+.top-field {
+ margin-top: 4.5em;
+}
+ .field-2 {
+  width: 17em;
+  height: 2em;
+  border-radius: 0.25em;
+ }
+ .field {
+  margin-top: 1em;
+ }
+ .actions {
+  margin-top: 7em;
+ }
+ .action {
+  width: 8em;
+  height: 2em;
+  border-radius: 0.25em;
+  background-color: #00acff;
+  color: #ffffff;
+  border-color:#00acff; 
  }

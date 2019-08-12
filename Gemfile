@@ -67,3 +67,5 @@ gem 'hirb'
 gem 'hirb-unicode'
 # Use ActiveStorage variant
 gem 'mini_magick'
+#ログイン機能
+gem 'devise'
