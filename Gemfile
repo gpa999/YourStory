@@ -69,3 +69,6 @@ gem 'hirb-unicode'
 gem 'mini_magick'
 #ログイン機能
 gem 'devise'
+gem 'carrierwave'
+gem 'jquery-rails'
+gem 'font-awesome-rails'

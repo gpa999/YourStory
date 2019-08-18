@@ -1,8 +1,9 @@
+<div class="all-story">
 <% @stories.each do |story| %>
 <div class="story-box">
-    <div class="story-block story-image" style="background-image: url(<%= story.image %>) "></div>
+    <div class="story-block story-image" style="background-image: url(<%= rails_blob_path(story.image)%>) "></div>
     <div class="story-block story-tb"> 
-      <a href="" class="story-wp story-title">
+      <a href="/stories/<%= story.id %>" class="story-wp story-title">
           <%= story.title %>
       </a>
       <p class="story-wp story-text">
@@ -11,11 +12,12 @@
     </div>   
     <div class="story-block">
      <a href="" class="story-sub story-un">
-      # user_name
+      # <%= story.user.nickname %>
      </a> 
-     <a href="" class=" story-sub story-read">
+     <a href="/stories/<%= story.id %>" class=" story-sub story-read">
        >>>read
      </a>
     </div>
 </div>
 <% end %>
+</div>

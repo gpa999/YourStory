@@ -16,12 +16,11 @@
       <a href="/" class="title grid-6">
         YourStory
       </a>
-      </div>
+    </div>
       <div class="top haji">
        <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post' %>
-          <a class="post" href="/users/show">Myページ</a>
         </div>
       <% else %>
         <div class="user_nav grid-6">
@@ -29,14 +28,22 @@
           <%= link_to "アカウント登録", new_user_registration_path, class: 'post' %>
         </div>
       <% end %>
-      </div>
-      </header>
+    </div>
+   </header>
     <div class="big_box left-contents">
     <%= yield %>
     </div>
     <div class="big_box right-contents">
-      <a href="stories" class="in-right">▶︎ storyページへ</a>
-      <a href="users" class="in-right">▶︎ ユーザーページへ</a>
+      <% if user_signed_in? %>
+      <div class="border_outer">
+      <div class="border_inner"><%= link_to "ストーリーをつくる", new_story_path, class:"top-right"%></div>
+      </div>
+      <% end %>
+      <a href="/stories" class="in-right">▶︎ ストーリーページへ</a>
+      <a href="/users" class="in-right">▶︎ ユーザーページへ</a>
+      <% if user_signed_in? %>
+      <%= link_to "▶︎ Myページへ", user_path(current_user),class:"in-right"%>
+      <% end %>
     </div>
   </body>
 </html>

@@ -1,0 +1,13 @@
+<%= form_for @story do |f| %>
+ <h2 class="form-image-word">ストーリー画像</h2>
+ <div class="right-cut"></div>
+ <%= f.file_field :image, class: "form-story form-story-image", autofocus: true, placeholder: "画像アップロード" %>
+ <h2 class="form-title-word">ストーリータイトル</h2>
+ <div class="left-cut-1"></div>
+ <%= f.text_field :title, placeholder: "ストーリータイトル", class: "form-story form-story-title" %>
+ <h2 class="form-text-word">あらすじ</h2>
+ <div class="left-cut-2"></div>
+ <%= f.text_field :text, placeholder: "あらすじ", class: "form-story form-story-text" %>
+ <%= f.submit "作成", class: "form-story story-send" %>
+<% end %>
+      
