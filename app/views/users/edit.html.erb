@@ -1,0 +1,7 @@
+<%= form_for current_user do |f| %>
+  <h2 class="userimage-form-top">ユーザー画像</h2>
+  <%= f.file_field :image, class: "user-form userimage-form", autofocus: true, placeholder: "画像アップロード" %>
+  <h2 class="username-form-top">ユーザーネーム</h2>
+  <%= f.text_field :nickname, class: "user-form username-form", placeholder:  "#{current_user.nickname}"%>
+  <%= f.submit "変更", class: "user-form user-form-button" %>
+<% end %>

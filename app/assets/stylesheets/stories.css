@@ -22,23 +22,28 @@
   color: #000000;
   margin-top: 0.7em;
   font-size: 1em;
-  width: 10vw; }
+  width: 10vw;
+}
 
 .story-tb {
   height: 10vh;
-  width: 20vw; }
+  width: 20vw;
+}
 
 .story-text {
   margin-top: 1.4em;
   font-size: 0.7em;
   color: #AAAAAA;
-  width: 18vw; }
+  width: 18vw;
+}
 
 .story-sub {
   display: block;
-  text-decoration: none; }
+  text-decoration: none; 
+}
 
 .story-un {
+  margin-left:0.5vw;
   margin-top: 0.5em;
   color: #AAAAAA; }
 

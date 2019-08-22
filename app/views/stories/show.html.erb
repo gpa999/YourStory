@@ -3,7 +3,10 @@
 <div class="show-contents show-image" style="background-image: url(<%= rails_blob_path(@story.image) %>) "></div>
 <div class="show-contents show-title"><h3><%= @story.title %></h3></div>
 <div class="show-contents show-text"><%= @story.text %></div>
-<div class="show-contents"><a href="" class="st-user"><%= @story.user.nickname %></a></div>
+<div class="show-contents">
+  <div class="index-image user-parts" style="background-image: url(<%= rails_blob_path(@story.user.image)%>) "></div>
+  <a href="/users/<%= @story.user_id %>" class="st-user story-un user-parts"><%= @story.user.nickname %></a>
+</div>
 </div>
 <div class="story-show">
     <% if user_signed_in? %>

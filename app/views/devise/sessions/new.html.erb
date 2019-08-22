@@ -1,7 +1,7 @@
 <div class="sign">
 <span class="sign_top">▼ ログイン</span>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="top-field">
+  <div class="top-field-2">
     <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "メールアドレス",class:"field-2" %>
   </div>
 
@@ -11,7 +11,7 @@
 
  
 
-  <div class="actions">
+  <div class="actions-2">
     <%= f.submit "ログイン" ,class:"action"%>
   </div>
 <% end %>

@@ -11,8 +11,9 @@
       </p>
     </div>   
     <div class="story-block">
-     <a href="" class="story-sub story-un">
-      # <%= story.user.nickname %>
+     <div class="index-image user-parts" style="background-image: url(<%= rails_blob_path(story.user.image)%>) "></div>
+     <a href="/users/<%= story.user_id %>" class="story-sub story-un user-parts">
+       <%= story.user.nickname %>
      </a> 
      <a href="/stories/<%= story.id %>" class=" story-sub story-read">
        >>>read

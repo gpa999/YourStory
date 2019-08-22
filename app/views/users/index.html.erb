@@ -1,0 +1,15 @@
+<% @users.each do |user| %>
+<div class="user-index">
+    <div class="user-index-image user-index-content" style="background-image: url(<%= rails_blob_path(user.image)%>) "></div>
+    <div class="user-index-content index-name-parts">
+      <a class="user-index-name" href="/users/<%= user.id %>"><%= user.nickname %></a>
+      <p class="user-index-path"><%= user.user_path %></p>
+    </div>
+    <div class="user-index-content index-story-parts">
+      <h3 class="userindex-story-top">story</h3>
+      <% user.stories.each do |story| %>
+          <a class="userindex-story" href="/stories/<%= story.id %>"><%= story.title %></a>
+      <% end %>
+    </div>
+</div>
+<% end %>

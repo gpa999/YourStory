@@ -2,10 +2,14 @@
   <span class="sign_top">▼ アカウント登録 </span>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.file_field :image, class: "top-field", autofocus: true, placeholder: "画像アップロード" %>
 
-  <div class="top-field">
-    
+  <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class:"field-2" %>
+  </div>
+  
+  <div class="field">
+    <%= f.text_field :user_path, autofocus: true, maxlength: "10", placeholder: "ユーザーパス", class:"field-2" %>
   </div>
   
   <div class="field">

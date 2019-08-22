@@ -1,3 +1,156 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-show-image {
+    height: 6.5em;
+    width: 7em;
+    border-radius: 50%;
+    border: solid 2px #c0c0c0;
+    background-size:cover;
+    margin-top: 4vh;
+    margin-left: 3vw;
+}
+.user-show-name {
+    margin-left: 4vw;
+    margin-top: 7vh;
+}
+.user-show-top {
+    display: inline-block;
+    vertical-align: top;
+}
+.user-contents-top {
+    margin-top: 2vh;
+    margin-left: 5vw;
+    color: #e0c2c2;
+}
+.user-contents {
+    display: block;
+}
+.user-story-block {
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+.user-show-story {
+    margin-left: 1.5em;
+}
+.user-edit {
+    display: block;
+    text-decoration: none;
+    margin-left: 55vw;
+    margin-top: 2vh;
+    padding-top: 1vh;
+    padding-left: 1vw;
+    height: 3.5vh;
+    width: 11vw;
+    color: #ffffff;
+    background: #f7c8c8	;
+    border-radius: 0.5em;
+}
+.user-form {
+    display: block;
+}
+.userimage-form-top {
+    margin-left: 20vw;
+    margin-top: 5vh;
+    padding-left: 2vw;
+    color: #c0c0c0;
+    width: 14vw;
+    border-bottom: solid 2px #7e5727;
+}
+.userimage-form {
+    height: 5.5em;
+    width: 9em;
+    border: solid 2px #d0d0d0;
+    border-radius: 50%;
+    margin-left: 30vw;
+    margin-top: 5vh;
+    padding-top: 4em;
+    padding-left: 1em;
+}
+.username-form-top {
+    margin-left: 10vw;
+    color: #c0c0c0;
+    width: 15vw;
+    border-bottom: solid 2px #7e5727;
+    padding-left: 2vw;
+}
+.username-form {
+    height: 10vh;
+    width: 35vw;
+    margin-top: 5vh;
+    margin-left: 20vw;
+    font-size: 1.8em;
+    border-radius: 0.25em;
+    border: solid 2px #d0d0d0;
+}
+.user-form-button {
+    height: 7vh;
+    width: 8vw;
+    margin-left: 50vw;
+    margin-top: 10vh;
+    border-radius: 0.25em;
+    border: solid 0.5px #7e5727;
+}
+.name-group {
+    display: block;
+}
+.show-name-path {
+    margin-left: 4vw;
+    color:#c8c8c8;
+}
+.user-index {
+    width: 60vw;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 4px gray;
+    margin-left: 6vw;
+    margin-top: 1em;
+} 
+.user-index-image {
+   background-size:cover;
+   height: 5.8em;
+   width: 6em;
+   border-radius: 50%;
+   border: solid 2px #c0c0c0;
+}
+.user-index-name {
+    text-decoration: none;
+    font-size: 1.8em;
+    color: #000000;
+}
+.user-index-path {
+    color: #c8c8c8;
+}
+.user-index-content {
+    display: inline-block;
+    vertical-align: top;
+}
+.userindex-story-top {
+    color: #e0c2c2;
+}
+.index-name-parts {
+    margin-top: 2vh;
+    margin-left: 2vw;
+}
+.index-story-parts {
+    margin-left: 6vw;
+    margin-top: 0.5vh;
+}
+.userindex-story {
+    margin-left: 1vw;
+}
+.comment-field {
+    width: 20vw;
+    margin-left: 45vw;
+    margin-top: 1vh;
+}
+.follow-button {
+    margin-top: 1vh;
+    margin-left: 33vw;
+}
+.fan-parts {
+    display: inline-block;
+    margin-left: 5px;
+}
+.fan-count {
+    color: #b8b8b8;
+}
