@@ -19,9 +19,10 @@
  .ht-6 {
      height: 10vh;
      width: 75.6vw;
-     background-color: #c89351	;
+     background-color: #f0f0f0	;
      padding-top:2.5vh;
      margin-right:0;
+     border-bottom: solid 2px #4e3618;
  }
  .top {
   display: table-cell;
@@ -38,10 +39,11 @@
  .haji {
   width:26.08vw;
   height: 8.548vh;
-  background-color: #C9C49B;
+  background-color: #A7ACB8;
   margin: 0;
   padding-top:4vh;
   padding-left:0.5em;
+  border-bottom: solid 2px #4e3618;
  }
  
  .grid-6 {
@@ -53,7 +55,7 @@
   color: #666666;
   margin-left: 2em;
   display: inline-block;
-  border: solid #350a61 0.1em;
+  border: solid #4e3618	 0.1em;
   border-radius:0.25em;
   padding: 0.5em;
  }
@@ -67,24 +69,24 @@
  }
  .right-contents {
   width: 26.08vw;
-  height: 100vh;
-  background-color:#CAE5CD;
+  height: 145vh;
+  background-color:#283555;
   padding-top: 1.2em;
  }
  .border_outer {
   padding: 1px;
-  background: linear-gradient(to right,#cf4738 20%, #e08a81 80%);
+  background: linear-gradient(to right,#60392d 20%, #e7d2cb 80%);
   width: 15vw;
   margin-left: 2em;
   border-radius:0.5em;
  }
  .border_inner {
   padding:0.7em;
-  background-color:#CAE5CD;
+  background-color:#283555;
  }
  .top-right{
   text-decoration: none;
-  background: linear-gradient( to right,#cf4738 20%, #e08a81 80% );
+  background: #ab7736;
   -webkit-background-clip: text;
   color: transparent;
   font-size: 1.2em;
@@ -99,7 +101,7 @@
   color:#666666 ;
  }
  .sign {
-  height: 70vh;
+  height: 73vh;
   width: 30vw;
   background-color:#f0f0f0;
   margin-top: 3em;
@@ -107,13 +109,13 @@
   box-shadow: 2px 2px 4px gray;
   border-radius: 0.25em;
   text-align: center;
-  padding-top: 2em;
+  padding-top: 4vh;
  }
  .sign_top {
   color: #9dceff;
  }
 .top-field {
- margin-top: 3vh;
+ margin-top: 2vh;
  height: 4.5em;
  width: 8em;
  padding-top: 3em;
@@ -129,10 +131,10 @@
   border-radius: 0.25em;
  }
  .field {
-  margin-top: 1em;
+  margin-top: 2.2vh;
  }
  .actions {
-  margin-top: 1em;
+  margin-top: 2vh;
  }
  .action {
   width: 8em;
@@ -227,7 +229,7 @@
 }
 .story-contents {
  height: 12vh;
- border-bottom:dashed 3px #8fb8e0;
+ border-bottom:solid 1px #8fb8e0;
 }
 .post-name {
  height: 6.5vh;
@@ -271,4 +273,14 @@
 .actions-2 {
  margin-top: 5em;
 }
-
+.story-image {
+    margin-left: 0vw;
+    width: 18vw;
+    height: 20vh;
+    border-radius: 0.15em;
+    background-size:cover;                 /* 画像のサイズを指定    */
+   
+}
+.show-image {
+    border-radius: 0.15em;
+}

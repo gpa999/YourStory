@@ -1,3 +1,4 @@
+<div class="user-index-all">
 <% @users.each do |user| %>
 <div class="user-index">
     <div class="user-index-image user-index-content" style="background-image: url(<%= rails_blob_path(user.image)%>) "></div>
@@ -12,4 +13,12 @@
       <% end %>
     </div>
 </div>
+<div class="index-fan-parts">
+      <p class="fan-parts fan-count">ファン数 <%= user.followers.count %>人</p>
+      <% if user_signed_in? %>
+      <div class="fan-parts"><%= render "relationships/follow_button", user: user %></div>
+      <% end %>
+</div>
 <% end %>
+<%= paginate(@users) %>
+</div>

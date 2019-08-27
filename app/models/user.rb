@@ -7,11 +7,16 @@ class User < ApplicationRecord
          
          
   has_many :stories, ->{ order("created_at DESC") }
-  has_many :comments, ->{ order("created_at DESC")}
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverse_of_relationships, source: :user
+  has_many :comments, class_name: 'Comment', foreign_key: 'user_id' 
+  has_many :ratings, through: :comments, source: :user
+  has_many :reverse_of_comments, class_name: 'Comment', foreign_key: 'rate_id'
+  has_many :raters, through: :reverse_of_comments, source: :rate
+  
+  validates :nickname, presence: true, length: {minimum: 1, maximum: 10}
   
    def follow(other_user)
      unless self == other_user
@@ -27,4 +32,7 @@ class User < ApplicationRecord
    def following?(other_user)
      self.followings.include?(other_user)
    end
+   
+   
+   
 end

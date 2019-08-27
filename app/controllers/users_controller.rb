@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
     
     def index
-        @users = User.all
+        @users = User.order("RAND()").page(params[:page]).per(6)
     end
     
     def show
         @user = User.find(params[:id])
+        @comment = Comment.new
+        @comments = @user.comments.order("created_at DESC").page(params[:page]).per(10)
     end
     
     def edit 
@@ -20,4 +22,6 @@ class UsersController < ApplicationController
     def update_params
         params.require(:user).permit(:nickname, :image)
     end
+    
+
 end

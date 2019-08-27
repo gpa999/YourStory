@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
     def index 
-        @stories = Story.all
+        @stories = Story.order("created_at DESC").page(params[:page]).per(6)
     end
     
     def new 

@@ -1,0 +1,7 @@
+<% unless current_user == user %>
+  <%= form_for [user, comment] do |f| %>
+    <%= f.hidden_field :rate_id, :value => current_user.id %>
+    <%= f.text_field :text, placeholder:"コメントを入力してください", class:"comment_form" %>
+    <%= f.submit "送信" %>
+  <% end %>
+<% end %>  

@@ -1,0 +1,7 @@
+<div class="<%= cycle("comment-box-1", "comment-box-2", name: "comment-box") %>">
+  <div class="comment-parts">
+    <div class="comment-profile comment-image" style="background-image: url(<%= rails_blob_path(comment.rate.image)%>) "></div>
+    <a href="/users/<%= comment.rate_id %>" class="comment-profile comment-name"><%= comment.rate.nickname %></a>
+  </div>    
+  <div class="comment-parts comment-text"><%= comment.text %></div>
+</div>

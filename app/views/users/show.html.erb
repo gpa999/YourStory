@@ -1,14 +1,15 @@
 <div class="user-contents">
-  <div class="user-show-image user-show-top" style="background-image: url(<%= rails_blob_path(@user.image)%>) "></div>
-  <div class="user-show-top">
-    <h1 class="user-show-name name-group"><%= @user.nickname %></h1>
-    <h4 class="name-group show-name-path"><%= @user.user_path %></h4>
-  </div>  
-  <div class="follow-button user-show-top">
+  <div class="follow-button">
     <p class="fan-parts fan-count">ファン数 <%= @user.followers.count %>人</p>
     <div class="fan-parts"><%= render "relationships/follow_button", user: @user %></div>
-    </div> 
+  </div> 
+  <div class="user-show-image user-show-top" style="background-image: url(<%= rails_blob_path(@user.image)%>) "></div>
+  <div class="user-show-top user-name-parts">
+    <h1 class="user-show-name name-group"><%= @user.nickname %></h1>
+    <h4 class="name-group show-name-path"><%= @user.user_path %></h4>
+</div>
 </div> 
+ 
 <h2 class="user-contents user-contents-top">story</h2>
 <div class="user-contents user-story-block">
   <% @user.stories.each do |story| %>
@@ -21,4 +22,9 @@
   <% end %>
 <% end %>
 <div class="all-cut"></div>
-  
+<div class="comment-form-box">
+  <%= render :partial => "comments/comment_form", :locals => { user: @user, comment: @comment } %>
+</div>
+<div class="comment-all">
+  <%= render :partial => "comments/comment_table", :collection => @comments, :as => "comment" %> 
+</div>  
