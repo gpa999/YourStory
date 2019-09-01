@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
+    before_action :redirect_top, except: [:index,:show]
     def index 
-        @stories = Story.order("created_at DESC").page(params[:page]).per(6)
+        @stories = Story.includes(:user).search(params[:search]).page(params[:page]).per(6)
     end
     
     def new 
@@ -22,4 +23,6 @@ class StoriesController < ApplicationController
     def story_params
         params.require(:story).permit(:title, :image, :text)
     end
+    
+    
 end

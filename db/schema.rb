@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_035515) do
+ActiveRecord::Schema.define(version: 2019_09_01_091249) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_08_27_035515) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "type", limit: 30
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "rate_id"
@@ -43,11 +53,21 @@ ActiveRecord::Schema.define(version: 2019_08_27_035515) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_id"
+    t.string "image_filename"
+    t.integer "image_size"
+    t.string "image_content_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.integer "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "text", limit: 4294967295
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_035515) do
     t.bigint "follow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "reliability"
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
@@ -78,6 +99,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_035515) do
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.string "user_path"
+    t.float "trust"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

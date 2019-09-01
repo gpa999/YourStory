@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    
+    before_action :redirect_top
     def create 
         user = User.find(params[:user_id])
         unless user == current_user

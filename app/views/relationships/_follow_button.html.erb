@@ -1,13 +1,17 @@
-<% unless current_user == user %>
-  <% if current_user.following?(user) %>
-    <%= form_for(current_user.relationships.find_by(follow_id: user.id), html: { method: :delete }) do |f| %>
-      <%= hidden_field_tag :follow_id, user.id %>
-      <%= f.submit 'ファン解除', class: 'btn btn-danger btn-block' %>
-    <% end %>
-  <% else %>
-    <%= form_for(current_user.relationships.build) do |f| %>
-      <%= hidden_field_tag :follow_id, user.id %>
-      <%= f.submit 'ファン登録', class: 'btn btn-primary btn-block' %>
-    <% end %>
+<% if user_signed_in? %>
+  <% unless current_user == user %>
+    <% if current_user.following?(user) %>
+      <%= form_for [current_user,current_user.relationships.find_by(follow_id:user.id)], html: {method: "patch"} do |f| %>
+        <%= hidden_field_tag :follow_id, user.id %>
+        <%= f.select :reliability, [["0", "-1"], ["1", "0"], ["2", "1"]] %>
+        <%= f.submit "変更" %>
+      <% end %>
+    <% else %>  
+      <%= form_for [current_user,relationship] do |f| %>
+        <%= hidden_field_tag :follow_id, user.id %>
+        <%= f.select :reliability, [["0", "-1"], ["1", "0"], ["2", "1"]], :selected=>0 %>
+        <%= f.submit "変更" %>
+      <% end %>
+    <% end %>  
   <% end %>
 <% end %>

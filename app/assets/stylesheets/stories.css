@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 .story-box {
   width: 24vw;
   padding: 1em 2em;
@@ -44,7 +44,7 @@
 
 .story-un {
   margin-left:0.5vw;
-  margin-top: 0.5em;
+  
   color: #AAAAAA; }
 
 .story-read {

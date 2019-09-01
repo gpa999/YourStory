@@ -1,4 +1,5 @@
 <div class="all-story">
+<div class='search-tag'><%= render "search" %></div>
 <% @stories.each do |story| %>
 <div class="story-box">
     <div class="story-block story-image" style="background-image: url(<%= rails_blob_path(story.image)%>) "></div>

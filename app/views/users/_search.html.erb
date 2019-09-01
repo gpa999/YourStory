@@ -1,0 +1,4 @@
+<%= form_tag(users_path,:method => 'get') do %>
+  <%= text_field_tag :search,"",placeholder:"ユーザーパス検索",class:"search-field" %>
+  <%= submit_tag '検索', :name => nil, class:"search-submit" %>
+<% end %>

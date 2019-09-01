@@ -1,7 +1,7 @@
 <div class="user-contents">
   <div class="follow-button">
-    <p class="fan-parts fan-count">ファン数 <%= @user.followers.count %>人</p>
-    <div class="fan-parts"><%= render "relationships/follow_button", user: @user %></div>
+    <p class="fan-parts fan-count">信頼度 <%= @user.reliability_sum %></p>
+    <div class="fan-parts"><%= render :partial =>"relationships/follow_button", :locals => { user: @user, relationship: @relationship } %></div>
   </div> 
   <div class="user-show-image user-show-top" style="background-image: url(<%= rails_blob_path(@user.image)%>) "></div>
   <div class="user-show-top user-name-parts">

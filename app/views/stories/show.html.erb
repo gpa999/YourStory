@@ -1,5 +1,5 @@
-<div class="show-all">
-<div class="story-show">
+<div class="show-show-all">
+<div class="story-show story-profile">
 <div class="show-contents show-image" style="background-image: url(<%= rails_blob_path(@story.image) %>) "></div>
 <div class="show-contents show-title"><h3><%= @story.title %></h3></div>
 <div class="show-contents show-text"><%= @story.text %></div>
@@ -11,11 +11,11 @@
 <div class="story-show">
     <% if user_signed_in? %>
     <% if current_user == @story.user %>
-      <a href="" class="post-add">＋ 追加</a>
+      <a href="/stories/<%= @story.id %>/posts/new" class="post-add">＋ 追加</a>
       <% @story.posts.each do |post| %>
       <div class="story-contents">
         <p class="post-name"><%= post.title %></p>
-        <a class="post-read">>>>read</a>
+        <a class="post-read" href="/stories/<%= @story.id %>/posts/<%=post.id %>">>>>read</a>
       </div>  
       <% end %>
     <% else %>
@@ -23,7 +23,7 @@
     <% @story.posts.each do |post| %>
       <div class="story-contents">
         <p class="post-name"><%= post.title %></p>
-        <a class="post-read">>>>read</a>
+        <a class="post-read" href="/stories/<%= @story.id %>/posts/<%=post.id %>">>>>read</a>
       </div>
     <% end %>
     <% end %>
@@ -32,7 +32,7 @@
     <% @story.posts.each do |post| %>
       <div class="story-contents">
         <p class="post-name"><%= post.title %></p>
-        <a class="post-read">>>>read</a>
+        <a class="post-read" href="/stories/<%= @story.id %>/posts/<%=post.id %>">>>>read</a>
       </div>
     <% end %>
     <% end %>

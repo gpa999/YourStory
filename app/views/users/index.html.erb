@@ -1,3 +1,4 @@
+<div class="user-serch"><%= render "search" %></div>
 <div class="user-index-all">
 <% @users.each do |user| %>
 <div class="user-index">
@@ -14,9 +15,9 @@
     </div>
 </div>
 <div class="index-fan-parts">
-      <p class="fan-parts fan-count">ファン数 <%= user.followers.count %>人</p>
+      <p class="fan-parts fan-count">信頼度 <%= user.reliability_sum %></p>
       <% if user_signed_in? %>
-      <div class="fan-parts"><%= render "relationships/follow_button", user: user %></div>
+      <div class="fan-parts"><%= render :partial =>"relationships/follow_button", :locals => { user: user, relationship: @relationship } %></div>
       <% end %>
 </div>
 <% end %>

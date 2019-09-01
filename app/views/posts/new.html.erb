@@ -1,0 +1,8 @@
+<%= form_for [@story, @post] do |f| %>
+  <%= f.text_field :title, placeholder:"タイトル", class:"post-form post-title-form"  %>
+  <div class="post-form post-text-form">
+    <%= f.text_area :text, 'data-provider': :summernote %>
+  </div>
+  <%= f.hidden_field :story_id, :value => @story.id %>
+  <%= f.submit "作成",class:"post-form post-action"  %>
+ <% end %> 

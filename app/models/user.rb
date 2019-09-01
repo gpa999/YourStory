@@ -28,11 +28,28 @@ class User < ApplicationRecord
      relationship = self.relationships.find_by(follow_id: other_user.id)
      relationship.destroy if relationship
    end
+   
+   def self.search(search) #ここでのself.はUser.を意味する
+    if search
+      where(['user_path LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
+    else
+      #order("RAND()") #全て表示。User.は省略
+      order("users.reliability_sum DESC")
+    end
+  end
 
    def following?(other_user)
      self.followings.include?(other_user)
    end
    
+   def reliability_sum
+     array = []
+     self.reverse_of_relationships.each do |relationship|
+     array << relationship.reliability
+     end
+     result = array.sum.to_f/User.all.count.to_f + 1
+     result.truncate(2)
+  end
    
    
 end
